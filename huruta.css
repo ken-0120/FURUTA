@@ -147,6 +147,12 @@ nav ul li {
     overflow-wrap: break-word;
 }
 
+footer{
+    height: 20vh;
+    background-color: rgba(51, 51, 51);
+
+}
+
 .hamback {
     position: fixed;
     display: flex;
@@ -252,6 +258,7 @@ nav ul li {
     width: 90%;
     text-align: center;
     background-color: aliceblue;
+    opacity: 0.2;
 }
 
 .scroll_up {
