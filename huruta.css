@@ -59,8 +59,6 @@ header{
     background-attachment: fixed;   
 }
 
-
-
 nav{
     top: 0px;
     a{
@@ -81,8 +79,6 @@ nav ul li {
     list-style: none;
     margin: 20px 30px;
 }
-
-
 
 .bg{
     height: 40vw;
@@ -294,10 +290,6 @@ footer{
 .timing03 {transition-delay: .4s;}
 .timing04 {transition-delay: .6s;}
 .timing05 {transition-delay: .8s;}
-
-
-
-
 
 .shapedividers_com-253 {
     position: relative;
