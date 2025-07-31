@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const scrollAnimation = () => {
     scrollElements.forEach((el) => {
-      const triggerMargin = 400;
+      const triggerMargin = 200;
       const rect = el.getBoundingClientRect();
       if (window.innerHeight > rect.top + triggerMargin) {
         el.classList.add("on");
