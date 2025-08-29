@@ -1,7 +1,7 @@
 class CircularText {
             constructor(element, options = {}) {
                 this.element = element;
-                this.text = options.text || 'FURUTA*SPECIAL*SEWING*';
+                this.text = options.text || 'FURUTA*SPECIAL*SEWING*MACHINE*';
                 this.spinDuration = options.spinDuration || 20;
                 this.init();
             }
@@ -32,7 +32,7 @@ class CircularText {
             const circularTextElement = document.getElementById('circularText');
             if (circularTextElement) {
                 new CircularText(circularTextElement, {
-                    text: 'FURUTA*SPECIAL*MACHINE*',
+                    text: 'FURUTA*SPECIAL*SEWING*MACHINE*',
                     spinDuration: 20
                 });
             }

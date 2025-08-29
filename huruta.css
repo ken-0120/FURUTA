@@ -310,17 +310,15 @@
 
         .circular-text-container {
             position: absolute;
-            bottom: 100px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
             z-index: 100;
+            bottom: -100px;
+            left: 20px;
         }
 
         .circular-text {
-            width: 180px;
-            height: 180px;
+            width: 1800px;
+            height: 1800px;
             position: relative;
             border-radius: 50%;
             animation: spin 20s linear infinite;
@@ -334,7 +332,7 @@
             display: inline-block;
             left: 50%;
             top: 50%;
-            font-size: 16px;
+            font-size: 100px;
             color: #fff;
             font-weight: bold;
             font-family: "Cactus Classical Serif", serif;
