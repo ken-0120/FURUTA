@@ -3,7 +3,6 @@ class CircularText {
                 this.element = element;
                 this.text = options.text || 'FURUTA*SPECIAL*SEWING*';
                 this.spinDuration = options.spinDuration || 20;
-                this.onHover = options.onHover || 'speedUp';
                 this.init();
             }
 

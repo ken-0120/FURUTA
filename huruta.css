@@ -12,7 +12,7 @@
             position: relative;
             width: 100%;
             height: 100vh;
-             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
                         url('/img/pexels-wendyaffieplaas-1212179.jpg');
             background-size: cover;
             background-position: center;
@@ -327,10 +327,6 @@
             cursor: pointer;
             transition: animation-duration 0.3s ease;
             z-index: 101;
-        }
-
-        .circular-text:hover {
-            animation-duration: 5s;
         }
 
         .circular-text span {
