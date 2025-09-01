@@ -5,44 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>古田特殊ミシン</title>
     <link href="huruta.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 <body>
-    <header>
+    
 
+    <div id="fullpage">
+        <header class="section">
             <h2 class="logo"><a href="huruta.html">FURUTA</a></h2>
-
-        <div class="hamback" aria-label="メニューを開く">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamback" aria-label="メニューを開く">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
-        <nav class="nav-menu" id="navMenu" role="navigation" aria-label="メインメニュー">
-            <ul>
-                <div class="divide-line"></div>
-                <li><a href="#">ホーム</a></li>
-                <div class="divide-line"></div>
-                <li><a href="#jigyo">事業内容</a></li>
-                <div class="divide-line"></div>
-                <li><a href="#sewtec">刺繍技法</a></li>
-                <div class="divide-line"></div>
-                <li><a href="#contact">お問合わせ</a></li>
-                <div class="divide-line"></div>
-            </ul>
-        </nav>
-        <div class="content-area">
-            <div class="title">いい感じの言葉</div>
-        </div>
-        <div class="circular-text-container">
-            <div class="circular-text" id="circularText"></div>
-        </div>
-        <div class="shapedividers_com-253"></div>
-    </header>
+            <nav class="nav-menu" id="navMenu" role="navigation" aria-label="メインメニュー">
+                <ul>
+                    <div class="divide-line"></div>
+                    <li><a href="#">ホーム</a></li>
+                    <div class="divide-line"></div>
+                    <li><a href="#jigyo">事業内容</a></li>
+                    <div class="divide-line"></div>
+                    <li><a href="#sewtec">刺繍技法</a></li>
+                    <div class="divide-line"></div>
+                    <li><a href="#contact">お問合わせ</a></li>
+                    <div class="divide-line"></div>
+                </ul>
+            </nav>
+            <div class="content-area">
+                <div class="title">いい感じの言葉</div>
+            </div>
 
-    <main>
-        <section class="jigyo" id="jigyo">
+            <div class="shapedividers_com-253"></div>
+        </header>
+        <div class="section jigyo" id="jigyo">
+            <div class="circular-text-container">
+                <div class="circular-text" id="circularText"></div>
+            </div>
             <div class="bg">
                 <div class="imgposi scroll_up">
                     <img src="img/pexels-pavel-danilyuk-6461513.jpg">
@@ -52,7 +53,7 @@
                     <p>特殊ミシンを用いたステッチ加工<br>すべて手作業で丁寧に</p>
                 </div>
             </div>
-        </section>
+        </div>
         <div class="wave-divider wave-dark">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#1B1C1E"></path>
@@ -61,10 +62,7 @@
             </svg>
         </div>
 
-
-        <div class="blank"></div>
-
-        <section class="sewtec" id="sewtec">
+        <div class="section sewtec" id="sewtec">
             <div class="bg">
                 <div class="content sishu scroll_up">
                     <h2>刺繍技法</h2>
@@ -74,25 +72,25 @@
                     <img src="img/stitch.jpg">
                 </div>
             </div>
-        </section>
+        </div>
 
-        <div class="blank"></div>
-        <section class="contact" id="contact">
+        <div class="section contact" id="contact">
             <div class="bg">
                 <div class="content">
                     <h2>お問合わせ</h2>
                     <p>特殊ミシンのことなら<br>お気軽にご相談ください</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+        <footer class="section">
+            <p>&copy; 2024 FURUTA 古田特殊ミシン. All rights reserved.</p>
+        </footer>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 FURUTA 古田特殊ミシン. All rights reserved.</p>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
     <script src="js/scroll-fade.js"></script>
     <script src="js/hambarger.js"></script>
     <script src="js/circletext.js"></script>
+    <script src="js/fullpage.js"></script>
 </body>
 </html>
