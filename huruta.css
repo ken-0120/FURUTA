@@ -327,7 +327,7 @@
             display: flex;
             z-index: 10;
             bottom: -110%;
-            left: 5%;
+            left: -5%;
         }
 
         .circular-text {
