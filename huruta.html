@@ -35,16 +35,25 @@
         </div>
         <div class="shapedividers_com-253"></div>
     </header>
-
+        
     
         <div class="section jigyo" id="jigyo">
-            <div class="circular-text-container">
-                <div class="circular-text" id="circularText"></div>
-            </div>
+            
             <div class="bg">
-                <div class="imgposi scroll_up">
-                    <img src="img/pexels-pavel-danilyuk-6461513.jpg">
-                </div>
+                <svg class="scroll_circlar" xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                <title>Circular Text Path</title>
+                <defs>
+                    <path id="textcircle" d="M250,400a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
+                </defs>
+                <g class="textcircle" >
+                    <text textLength="940">
+                        <textPath xlink:href="#textcircle" aria-label="CSS & SVG are awesome" textLength="940">
+                            FURUTA * SPECIAL * SEWING | FURUTA * SPECIAL * SEWING |&#160;
+                        </textPath>
+                    </text>
+                </g>
+            </svg>
+                
                 <div class="content scroll_up timing02">
                     <h2>事業内容</h2>
                     <p>特殊ミシンを用いたステッチ加工<br>すべて手作業で丁寧に</p>
@@ -79,7 +88,6 @@
                 </div>
             </div>
         </div>
-
 
     <footer class="section footer fp-auto-height">
         <p>&copy; 2024 FURUTA 古田特殊ミシン. All rights reserved.</p>

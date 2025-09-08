@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const scrollElements = document.querySelectorAll(".scroll_up, .scroll_left, .scroll_right");
+    const scrollElements = document.querySelectorAll(".scroll_up, .scroll_left, .scroll_right, .scroll_circlar");
     const scrollAnimation = () => {
         scrollElements.forEach((el) => {
-            const triggerMargin = 400;
+            const triggerMargin = 600;
             const rect = el.getBoundingClientRect();
             if (window.innerHeight > rect.top + triggerMargin) {
                 el.classList.add("on");
