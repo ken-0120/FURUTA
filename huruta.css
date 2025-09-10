@@ -70,6 +70,7 @@
 
         .title {
             font-family: "Cactus Classical Serif", serif;
+            font-weight: 500;
             font-size: 8rem;
             color: rgb(226, 226, 246);
         }
@@ -131,7 +132,7 @@
         }
 
         .sewtec .bg {
-            background: #9CAF88;
+            background: #f0f0f0;
         }
 
         .content {
