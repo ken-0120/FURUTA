@@ -310,11 +310,11 @@
 
         .scroll_circlar{
             transition: 0.5s ease-in-out;
-            transform: translateX(-700px);
+            transform: translateX(-600px);
             opacity: 0;
         }
         .scroll_circlar.on {
-            transform: translateX(-400);
+            transform: translateX(-500px);
             opacity: 1;
         }
 
