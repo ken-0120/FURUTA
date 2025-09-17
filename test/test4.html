@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おしゃれなカルーセルUI (3アイテム・中央拡大版)</title>
+    <style>
+        /* CSS */
+        body {
+            background-color: #5b42f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            overflow: hidden; /* ボタンがはみ出す可能性があるので念のため */
+        }
+
+        .carousel-container {
+            width: 70%; /* カルーセル全体の幅を調整し、3アイテムが見えやすく */
+            max-width: 900px; /* 最大幅を設定 */
+            position: relative;
+            padding: 40px 0; /* インジケーターとボタンのためのスペースを確保 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-track-wrapper {
+            flex-grow: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            padding: 0 5%; /* 左右のアイテムが少し見えるように、より少なく */
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            transition: transform 0.5s ease-in-out;
+            justify-content: center; /* 中央にアイテムを寄せる */
+            align-items: center; /* 中央のアイテムに合わせて高さも調整 */
+        }
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 200px; /* アイテムの基本幅を調整 */
+            height: 120px; /* アイテムの基本高さを調整 */
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em;
+            color: #666;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 15px; /* アイテム間の隙間を調整 */
+        }
+
+        /* 中央のアクティブなアイテムのスタイル */
+        .carousel-item.active {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: scale(1.3); /* 周りのアイテムよりも大きく表示 */
+            height: 160px; /* アクティブ時に高さを調整 */
+            font-size: 1.5em; /* アクティブ時に文字サイズも大きく */
+        }
+
+        .carousel-item.active .sparkles {
+            font-size: 2em;
+            color: #ffd700;
+        }
+
+        .navigation-dots {
+            text-align: center;
+            position: absolute;
+            bottom: 0px; /* コンテナの下部に配置 */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #ffffff;
+        }
+
+        .carousel-button {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .carousel-button.prev {
+            left: -80px; /* ボタンをコンテナの少し外側に配置 */
+        }
+
+        .carousel-button.next {
+            right: -80px; /* ボタンをコンテナの少し外側に配置 */
+        }
+
+        /* 画面幅が狭い場合のボタン調整 */
+        @media (max-width: 768px) {
+            .carousel-container {
+                width: 95%;
+            }
+            .carousel-button.prev {
+                left: -40px;
+            }
+            .carousel-button.next {
+                right: -40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <button class="carousel-button prev">&lt;</button>
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track">
+                <!-- アイテムはJavaScriptでクローンされて配置されます -->
+                <div class="carousel-item">Item 1</div>
+                <div class="carousel-item">Item 2</div>
+                <div class="carousel-item">
+                    <span class="sparkles">✨</span>
+                </div>
+                <div class="carousel-item">Item 4</div>
+                <div class="carousel-item">Item 5</div>
+                <div class="carousel-item">Item 6</div>
+            </div>
+            <div class="navigation-dots">
+                <!-- ドットはJavaScriptで生成されます -->
+            </div>
+        </div>
+        <button class="carousel-button next">&gt;</button>
+    </div>
+
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselTrackWrapper = document.querySelector('.carousel-track-wrapper');
+            const carouselTrack = document.querySelector('.carousel-track');
+            const navigationDotsContainer = document.querySelector('.navigation-dots');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+
+            let originalItemsData = Array.from(document.querySelectorAll('.carousel-item'));
+            const itemsCount = originalItemsData.length;
+            const clonesPerSide = 2; // 無限ループのための左右のクローン数。3アイテム表示なら2つで十分
+            let currentIndex = clonesPerSide; // 現在アクティブな（表示上の）アイテムのインデックス
+
+            let allCarouselItems = []; // クローンを含むすべてのアイテムの配列
+
+            // クローンアイテムの作成と追加（無限ループのため）
+            function setupInfiniteCarousel() {
+                carouselTrack.innerHTML = ''; // 初期アイテムをクリア
+
+                // 末尾のクローンを追加
+                for (let i = itemsCount - clonesPerSide; i < itemsCount; i++) {
+                    carouselTrack.appendChild(originalItemsData[i].cloneNode(true));
+                }
+                // オリジナルアイテムを追加
+                originalItemsData.forEach(item => carouselTrack.appendChild(item.cloneNode(true)));
+                // 先頭のクローンを追加
+                for (let i = 0; i < clonesPerSide; i++) {
+                    carouselTrack.appendChild(originalItemsData[i].cloneNode(true));
+                }
+                // クローンを含む新しいアイテムリストを再取得
+                allCarouselItems = Array.from(carouselTrack.querySelectorAll('.carousel-item'));
+
+                updateCarouselPosition(false); // アニメーションなしで初期位置へ
+                updateActiveState(); // 初期アクティブ状態を設定
+            }
+
+            // ドットの生成とイベントリスナー
+            function createDots() {
+                navigationDotsContainer.innerHTML = ''; // ドットをクリア
+                for (let i = 0; i < itemsCount; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    dot.addEventListener('click', () => {
+                        currentIndex = clonesPerSide + i; // オリジナルアイテムのインデックスに合わせる
+                        updateCarouselPosition(true);
+                        updateActiveState();
+                    });
+                    navigationDotsContainer.appendChild(dot);
+                }
+                updateDotState();
+            }
+
+            // カルーセルの位置を更新する関数
+            function updateCarouselPosition(animate = true) {
+                // アイテムの幅とマージンを動的に取得
+                // 注意：allCarouselItems[0]はクローンアイテムなので、CSSで設定した元のアイテムのサイズを使うために
+                // .carousel-itemのスタイルを直接参照する方が確実
+                const sampleItem = document.createElement('div');
+                sampleItem.classList.add('carousel-item');
+                document.body.appendChild(sampleItem); // DOMに一時的に追加してスタイルを適用させる
+                const itemWidth = sampleItem.offsetWidth;
+                const itemStyle = getComputedStyle(sampleItem);
+                const itemMargin = parseFloat(itemStyle.marginRight) + parseFloat(itemStyle.marginLeft);
+                document.body.removeChild(sampleItem); // 削除
+
+                const totalItemWidth = itemWidth + itemMargin;
+
+                // 中央寄せのためのオフセット計算
+                // アクティブアイテムの拡大を考慮して、中央のアクティブアイテムが中央に来るように調整
+                // ここでは、デフォルトアイテムの幅を基準に計算し、アクティブ時の拡大はCSSのtransformで補う
+                const offset = (carouselTrackWrapper.offsetWidth / 2) - (itemWidth / 2);
+                const transformX = - (currentIndex * totalItemWidth) + offset;
+
+                carouselTrack.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+                carouselTrack.style.transform = `translateX(${transformX}px)`;
+            }
+
+            // アクティブなアイテムとドットを更新する関数
+            function updateActiveState() {
+                const visibleIndex = (currentIndex - clonesPerSide + itemsCount) % itemsCount; // ユーザーに見えるアイテムの元のインデックス
+                
+                allCarouselItems.forEach((item, index) => {
+                    let originalItemIdx = (index - clonesPerSide);
+                    if (originalItemIdx < 0) originalItemIdx += itemsCount;
+                    originalItemIdx %= itemsCount;
+
+                    if (originalItemIdx === visibleIndex) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+                updateDotState();
+            }
+
+            // ドットのアクティブ状態を更新する関数
+            function updateDotState() {
+                const navigationDots = Array.from(document.querySelectorAll('.dot'));
+                const visibleIndex = (currentIndex - clonesPerSide + itemsCount) % itemsCount; // ユーザーに見えるアイテムの元のインデックス
+                navigationDots.forEach((dot, index) => {
+                    if (index === visibleIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // 無限ループの遷移処理
+            carouselTrack.addEventListener('transitionend', () => {
+                if (currentIndex >= itemsCount + clonesPerSide) { // 最後のクローンに到達した場合
+                    currentIndex = clonesPerSide; // 最初のオリジナルアイテムにリセット
+                    updateCarouselPosition(false); // アニメーションなしで瞬間移動
+                } else if (currentIndex < clonesPerSide) { // 最初のクローンに到達した場合
+                    currentIndex = itemsCount + clonesPerSide - 1; // 最後のオリジナルアイテム（のクローン）にリセット
+                    updateCarouselPosition(false); // アニメーションなしで瞬間移動
+                }
+                updateActiveState(); // transitionend後に念のためactive状態を更新
+            });
+
+            // 左右のボタンナビゲーション
+            prevButton.addEventListener('click', () => {
+                currentIndex--;
+                updateCarouselPosition(true);
+                updateActiveState();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex++;
+                updateCarouselPosition(true);
+                updateActiveState();
+            });
+
+            // タッチ操作（スワイプ）
+            let startX = 0;
+            let currentTranslate = 0; // 現在のCSS transformのtranslateX値
+            let isDragging = false;
+
+            carouselTrack.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX; // 最初のタッチのX座標
+                const transformMatrix = new WebKitCSSMatrix(getComputedStyle(carouselTrack).transform);
+                currentTranslate = transformMatrix.m41;
+                isDragging = true;
+                carouselTrack.style.transition = 'none'; // ドラッグ中はアニメーションを無効に
+            });
+
+            carouselTrack.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const diffX = e.touches[0].clientX - startX;
+                carouselTrack.style.transform = `translateX(${currentTranslate + diffX}px)`;
+            });
+
+            carouselTrack.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                // アイテムの幅とマージンを動的に取得 (touchend時も最新の情報を取得)
+                const sampleItem = document.createElement('div');
+                sampleItem.classList.add('carousel-item');
+                document.body.appendChild(sampleItem);
+                const itemWidth = sampleItem.offsetWidth;
+                const itemStyle = getComputedStyle(sampleItem);
+                const itemMargin = parseFloat(itemStyle.marginRight) + parseFloat(itemStyle.marginLeft);
+                document.body.removeChild(sampleItem);
+                const totalItemWidth = itemWidth + itemMargin;
+
+                const finalPosition = new WebKitCSSMatrix(getComputedStyle(carouselTrack).transform).m41;
+                
+                const offset = (carouselTrackWrapper.offsetWidth / 2) - (itemWidth / 2);
+                
+                // 中央にスナップさせるべきアイテムのインデックスを計算
+                const targetIndexFloat = (offset - finalPosition) / totalItemWidth;
+                currentIndex = Math.round(targetIndexFloat);
+
+                // currentIndexがクローンの範囲外に出ないように調整
+                currentIndex = Math.max(clonesPerSide, Math.min(itemsCount + clonesPerSide - 1, currentIndex));
+
+                updateCarouselPosition(true); // スムーズなアニメーションでスナップ
+                updateActiveState();
+            });
+
+            // ウィンドウのリサイズ時にも位置を調整
+            window.addEventListener('resize', () => {
+                updateCarouselPosition(false); // アニメーションなしで位置調整
+                updateActiveState();
+            });
+
+            // 初期化
+            setupInfiniteCarousel();
+            createDots();
+            // 初期表示位置を正しいcurrentIndexに設定し、アニメーションなしで瞬間移動
+            updateCarouselPosition(false);
+            updateActiveState();
+        });
+    </script>
+</body>
+</html>
