@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 <body>
-    <header class="section header" id="home">
+    <header class="header" id="home">
     
         <h2 class="logo"><a href="huruta.html">FURUTA</a></h2>
         <div class="hamback" aria-label="メニューを開く">
@@ -32,29 +32,22 @@
             </ul>
         </nav>
         <div class="content-area" >
-            <div id="luxy">
-                <div class="title luxy-el"  data-speed-y="5" data-offset="50">
+                <div class="title rellax" data-rellax-speed="10">
                     <h1>Quality</h1>
                 </div>
-                <div class="title luxy-el"  data-speed-y="10" data-offset="50">
+                <div class="title rellax" data-rellax-speed="5">
                     <h2>You Can Trust,</h2>
                 </div>
-                <div class="title luxy-el" data-speed-y="13" data-offset="20">
+                <div class="title rellax" data-rellax-speed="2">
                     Stitch by Stitch
-                </div>  
-            </div>
-            
+                </div> 
         </div>
         <div class="scroll-indicator">
             ↓ スクロールしてください
         </div>
-    </header>
-
+    </header>    
     
-        
-    
-        <div class="section jigyo" id="jigyo">
-            
+        <div class="jigyo" id="jigyo">
             <div class="bg">
                 <svg class="scroll_circlar" xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
                 <title>Circular Text Path</title>
@@ -78,9 +71,9 @@
         </div>
         <div class="shapedividers_com-6735"></div>
         
-        <div class="section sewtec" id="sewtec">
-            <div class="bg">
-                <div class="content sishu scroll_up">
+        <div class="sewtec" id="sewtec">
+            <div class="bg rellax" >
+                <div class="sishu scroll_up">
                     <h2>刺繍技法</h2>
                     <p>30台以上のミシンを用いて<br>様々な種類のステッチを縫いあげる</p>
                 </div>
@@ -89,7 +82,7 @@
         </div>
         
 
-        <div class="section contact" id="contact">
+        <div class="contact" id="contact">
             <div class="bg">
                 <div class="content">
                     <h2>お問合わせ</h2>
@@ -98,18 +91,16 @@
             </div>
         </div>
     
-    <footer class="section footer fp-auto-height">
+    <footer class="footer fp-auto-height">
         <p>&copy; 2024 FURUTA 古田特殊ミシン. All rights reserved.</p>
     </footer>
-   
 
     <script src="js/scroll-fade.js"></script>
     <script src="js/hambarger.js"></script>
     <script src="js/circletext.js"></script>
-    <script src="js/luxy.js" charset="utf-8"></script>
-    <script charset="utf-8">
-        luxy.init();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.rellax');
     </script>
-    <script src="js/infinity-scroll.js"></script>
 </body>
 </html>

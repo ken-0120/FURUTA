@@ -108,35 +108,10 @@
             z-index: 100;
         }
 
-
-        .jigyo .imgposi {
-            width: 50%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-        }
-
-        .jigyo .imgposi img {
-            transform: rotate(90deg);
-            width: 50%;
-        }
-
-        .sewtec .imgposi {
-            width: 50%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .sewtec .imgposi img {
-            width: 70%;
-        }
-
-        .sewtec .bg {
-            background: #f0f0f0;
+        .sewtec{
+            background: url('/img/pexels-pavel-danilyuk-6461513.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .technique{
@@ -213,6 +188,7 @@
             display: block;
             height: 3px;
             background: #e2e2ee;
+            mix-blend-mode: difference;
             border-radius: 2px;
             margin: 5px 0;
             transition: 0.4s ease;
