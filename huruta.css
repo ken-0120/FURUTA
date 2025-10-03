@@ -15,11 +15,8 @@
             overflow-x: hidden;
         }
 
-        #fullpage{
-            overflow: hidden;
-        }
-
         header {
+            
             scroll-snap-type: y mandatory;
             position: relative;
             width: 100%;
@@ -51,7 +48,6 @@
         }
 
         .scroll-indicator{
-            
             position: absolute;
             bottom: 30px;
             left: 50%;
@@ -97,6 +93,7 @@
         }
 
         .bg {
+            
             height: 60vw;
             width: 100%;
             background: #36454F;
@@ -105,8 +102,29 @@
 
         .sewtec{
             background-image: url('img/pexels-pavel-danilyuk-6461513.jpg');
-
+            background-size: cover;
             background-position: center;
+        }
+
+        #sewtec{
+            display: flex;
+            flex-direction: column;
+            height: 50vh;
+            width: 40vw;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(30px);
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border:2px solid rgba(255,255,255,0.18);
+        }
+
+        #textposi{
+            
+            justify-content: start;
+            align-items: center;
+
+
         }
 
         .technique{
@@ -182,9 +200,8 @@
 
         .hamburger span {
             display: block;
-            height: 3px;
+            height:3px;
             background: #e2e2ee;
-            mix-blend-mode: difference;
             border-radius: 2px;
             margin: 5px 0;
             transition: 0.4s ease;
@@ -208,7 +225,7 @@
             right: -250px;
             width: 250px;
             height: 100vh;
-            background-color: #BC8F8F;
+            background-color: #393E46;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
             transition: right 0.4s ease, opacity 0.4s ease;
             z-index: 50;
