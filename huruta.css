@@ -60,7 +60,6 @@
         .content-area {
             position: absolute;
             height: auto;
-            width: auto;
             top: 10vh;
             left: 5vw;
             z-index: 1;    
@@ -416,11 +415,49 @@
                 width: 100% !important;
             }
             
+            .content-area{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+            }
+
             .content {
                 padding: 20px;
             }
             
             .content h2 {
                 font-size: 2rem;
+                line-height: 1.5;
+            }
+            .svg_container {
+                display: none; /* スマホでSVGは邪魔 */
+            }
+
+            #sewtec {
+                width: 90vw;
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .hamback {
+                width: 60px;
+                right: 15px;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .title {
+                font-size: 4vw;
+            }
+            
+            .content h2 {
+                font-size: 1.8rem;
+                line-height: 80px;
+            }
+            
+            #sewtec {
+                width: 60vw;
+                height: 40vh;
             }
         }
