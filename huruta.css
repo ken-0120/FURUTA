@@ -104,6 +104,13 @@
             background-position: center;
         }
 
+        .imgwrap{
+            position: absolute;
+            height: 60vw;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
         #sewtec{
             display: flex;
             flex-direction: column;
@@ -111,7 +118,6 @@
             width: 40vw;
             text-align: center;
             justify-content: center;
-            align-items: center;
             backdrop-filter: blur(30px);
             box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
             border:2px solid rgba(255,255,255,0.18);
@@ -119,7 +125,7 @@
 
         #textposi {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
         }
 
@@ -272,14 +278,12 @@
         }
 
         .scroll_left {
-            transition: 0.5s ease-in-out;
-            transform: translateX(-50px);
-            opacity: 0;
+            transition: 0.7s ease-in-out;
+            transform: translateX(-100%);
         }
 
         .scroll_left.on {
             transform: translateX(0);
-            opacity: 1;
         }
 
         .scroll_right {
