@@ -35,14 +35,17 @@
             top: 20px;
             left: 100px;
             z-index: 1001;
-        }
-
-        .logo a {
-            font-size: 2rem;
-            color: #e2e2ee;
-            text-decoration: none;
-            font-family: "Cactus Classical Serif", serif;
-            font-weight: 400;
+            a{
+                font-size: 2rem;
+                color: #e2e2ee;
+                text-decoration: none;
+                font-family: "Cactus Classical Serif", serif;
+                font-weight: 400;
+                transition: letter-spacing 0.3s;
+            }
+            a:hover {
+              letter-spacing: 0.05em; /* 字間の設定 */
+            }
         }
 
         .scroll-indicator{
@@ -62,7 +65,13 @@
             height: auto;
             top: 10vh;
             left: 5vw;
-            z-index: 1;    
+            z-index: 1;  
+            div{
+                transition: letter-spacing 0.3s;
+            }
+            div:hover {
+              letter-spacing: 0.05em; /* 字間の設定 */
+            }
         }
 
         .title {
@@ -99,6 +108,7 @@
         }
 
         .sewtec{
+            position: relative;
             background-image: url('img/pexels-pavel-danilyuk-6461513.jpg');
             background-size: cover;
             background-position: center;
@@ -123,10 +133,22 @@
             border:2px solid rgba(255,255,255,0.18);
         }
 
+        #sewtec:hover{
+            position:absolute;
+            height: 100%;
+            width: 100vw;
+            transition:ease-in-out 0.3s;
+            transform-origin: 50% 50%;
+            left: 0%;
+
+        }
+
         #textposi {
+            position: relative;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            height: 100%;
         }
 
         .content {
@@ -174,7 +196,7 @@
         .hamback:hover {
             backdrop-filter: blur(90px);
             .hamburger span{
-                background-color: #333;
+                background-color: #9f9f9f;
             }
         }
 
@@ -279,11 +301,13 @@
 
         .scroll_left {
             transition: 0.7s ease-in-out;
-            transform: translateX(-100%);
+            transform: translateX(-50px);
+            opacity: 0;
         }
 
         .scroll_left.on {
             transform: translateX(0);
+            opacity: 1;
         }
 
         .scroll_right {
