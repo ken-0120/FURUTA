@@ -118,7 +118,7 @@
             position: absolute;
             height: 60vw;
             width: 100%;
-            background-color: rgba(0, 0, 0, .3);
+            background-color: rgba(0, 0, 0, .2);
         }
 
         #sewtec{
@@ -129,21 +129,22 @@
             text-align: center;
             justify-content: center;
             backdrop-filter: blur(30px);
-            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
             border:2px solid rgba(255,255,255,0.18);
+            transition:ease-in-out 0.3s;
         }
+
+        .swiper {
+  width: 600px;
+  height: 300px;
+}
 
         #sewtec:hover{
-            position:absolute;
             height: 100%;
-            width: 100vw;
-            transition:ease-in-out 0.3s;
-            transform-origin: 50% 50%;
-            left: 0%;
-
+            width: 150vw;   
+;
         }
 
-        #textposi {
+        #textposi{
             position: relative;
             display: flex;
             align-items: center;
@@ -356,10 +357,8 @@
 
         svg{
             position: absolute;
-            
-    max-width: 100%;
-    height: auto;
-
+            max-width: 100%;
+            height: auto;
             left: 0vh;
         }
 
