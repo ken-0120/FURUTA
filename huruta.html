@@ -6,7 +6,8 @@
     <title>古田特殊ミシン</title>
     <link href="huruta.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.css">
+
 </head>
 <body>
     <header class="header" id="home">
@@ -81,6 +82,21 @@
                     <article class="scroll_up" id="sewtec">
                         <h2>刺繍技法</h2>
                         <p>30台以上のミシンを用いて<br>様々な種類のステッチを縫いあげる</p>
+                        <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">アンパンマン</div>
+            <div class="swiper-slide">食パンマン</div>
+            <div class="swiper-slide">カレーパンマン</div>
+        </div>
+        
+        <!-- ページネーション -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- ナビゲーションボタン -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
                     </article>
                 </div>
             </div>
@@ -94,34 +110,40 @@
                 </article>
             </div>
         </section>
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                ...
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-        
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
-        </div>
+    <!-- Swiperコンテナ -->
+    
     
     <footer class="footer">
         <p>&copy; 2024 FURUTA 古田特殊ミシン. All rights reserved.</p>
     </footer>
     <script src="js/scroll-fade.js"></script>
-    <script src="js/swiper.js"></script>
     <script src="js/hambarger.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 3000, // 3秒ごとに自動スライド
+                disableOnInteraction: false, // ユーザー操作後も自動再生継続
+                pauseOnMouseEnter: true, // マウスホバーで一時停止
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets', // 'bullets', 'fraction', 'progressbar'
+                dynamicBullets: true, // 動的な表示
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+        
+    </script>
     <script>
         var rellax = new Rellax('.rellax');
     </script>
