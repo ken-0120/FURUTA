@@ -83,19 +83,23 @@
                         <h2>刺繍技法</h2>
                         <p>30台以上のミシンを用いて<br>様々な種類のステッチを縫いあげる</p>
                         <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">アンパンマン</div>
-            <div class="swiper-slide">食パンマン</div>
-            <div class="swiper-slide">カレーパンマン</div>
-        </div>
-        
-        <!-- ページネーション -->
-        <div class="swiper-pagination"></div>
-        
-        <!-- ナビゲーションボタン -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
+                            <div class="swiper-wrapper">
+                                <a href="#" class="swiper-slide">
+                                    <div class="tag">
+                                        アンパンマン
+                                    </div> 
+                                </a>
+                                <a href="#" class="swiper-slide">食パンマン</a>
+                                <a href="#" class="swiper-slide">カレーパンマン</a>
+                            </div>
+
+                            <!-- ページネーション -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- ナビゲーションボタン -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
 
                     </article>
                 </div>
@@ -121,27 +125,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            autoplay: {
-                delay: 3000, // 3秒ごとに自動スライド
-                disableOnInteraction: false, // ユーザー操作後も自動再生継続
-                pauseOnMouseEnter: true, // マウスホバーで一時停止
-            },
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets', // 'bullets', 'fraction', 'progressbar'
-                dynamicBullets: true, // 動的な表示
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            }
-        });
+        (function() {
+            const slideLength = document.querySelectorAll('.swiper-slide').length;
+
+            const initSwiper = () => {
+                const mySwiper = new Swiper('.swiper', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                    loop: true,
+                    loopedSlides: slideLength,
+                    speed: 8000,
+                    autoplay: {
+                        delay: 0,
+                        disableOnInteraction: false,
+                    },
+                    freeMode: {
+                        enabled: true,
+                        momentum: false,
+                    },
+                    grabCursor: true,
+                    breakpoints: {
+                        1025: {
+                            spaceBetween: 32,
+                        }
+                    },
+                    on: {
+                        touchEnd: (swiper) => {
+                            swiper.slideTo(swiper.activeIndex + 1);
+                        }
+                    }
+                });
+            };
+
+            window.addEventListener('load', function(){
+                initSwiper();
+            });
+        }());
         
     </script>
     <script>

@@ -137,6 +137,14 @@
             width: 600px;
             height: 300px;
         }
+        
+        .tag{
+            font-size: 1.2rem;
+            color: rgb(102, 93, 93);
+            margin-bottom: 10px;
+            background-color: antiquewhite;
+            height: 100%;
+        }        
 
         #sewtec:hover{
             height: 100%;
