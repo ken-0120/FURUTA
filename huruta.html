@@ -78,30 +78,52 @@
         
         <section class="bg sewtec" id="sew">
             <div class="imgwrap">
-                <div class="content" id="textposi" data-rellax-speed="-4">
+                <div class="content_swiper" id="textposi" data-rellax-speed="-4">
                     <article class="scroll_up" id="sewtec">
                         <h2>刺繍技法</h2>
                         <p>30台以上のミシンを用いて<br>様々な種類のステッチを縫いあげる</p>
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <a href="#" class="swiper-slide">
-                                    <div class="tag">
-                                        アンパンマン
-                                    </div> 
-                                </a>
-                                <a href="#" class="swiper-slide">食パンマン</a>
-                                <a href="#" class="swiper-slide">カレーパンマン</a>
-                            </div>
-
-                            <!-- ページネーション -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- ナビゲーションボタン -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-
                     </article>
+
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <a href="#" class="swiper-slide">
+                                <div class="tag">
+                                    アンパンマン
+                                </div> 
+                            </a>
+                            <a href="#" class="swiper-slide">
+                                <div class="tag">
+                                    食パンマン
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide">
+                                <div class="tag">
+                                    カレーパンマン
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide">
+                                <div class="tag">
+                                    アンパンマン
+                                </div> 
+                            </a>
+                            <a href="#" class="swiper-slide">
+                                <div class="tag">
+                                    食パンマン
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide">
+                                <div class="tag">
+                                    カレーパンマン
+                                </div>
+                            </a>
+                        </div>
+                        <!-- ページネーション -->
+                        <div class="swiper-pagination"></div>
+                        <!-- ナビゲーションボタン -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -124,45 +146,46 @@
     <script src="js/hambarger.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.js"></script>
-    <script>
-        (function() {
-            const slideLength = document.querySelectorAll('.swiper-slide').length;
+<script>
+    (function() {
+        const slideLength = document.querySelectorAll('.swiper-slide').length;
 
-            const initSwiper = () => {
-                const mySwiper = new Swiper('.swiper', {
-                    slidesPerView: 'auto',
-                    spaceBetween: 16,
-                    loop: true,
-                    loopedSlides: slideLength,
-                    speed: 8000,
-                    autoplay: {
-                        delay: 0,
-                        disableOnInteraction: false,
-                    },
-                    freeMode: {
-                        enabled: true,
-                        momentum: false,
-                    },
-                    grabCursor: true,
-                    breakpoints: {
-                        1025: {
-                            spaceBetween: 32,
-                        }
-                    },
-                    on: {
-                        touchEnd: (swiper) => {
-                            swiper.slideTo(swiper.activeIndex + 1);
-                        }
+        const initSwiper = () => {
+            const mySwiper = new Swiper('.swiper', {
+                slidesPerView: 4,
+                spaceBetween: 16,
+                loop: true,
+                loopedSlides: slideLength,
+                speed: 5000, // より滑らかに
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                },
+                allowTouchMove: true,
+                grabCursor: true,
+                breakpoints: {
+                    1025: {
+                        spaceBetween: 32,
                     }
-                });
-            };
-
-            window.addEventListener('load', function(){
-                initSwiper();
+                },
+                // トランジションを線形に
+                on: {
+                    init: function() {
+                        this.wrapperEl.style.transitionTimingFunction = 'linear';
+                    },
+                    slideChange: function() {
+                        this.wrapperEl.style.transitionTimingFunction = 'linear';
+                    }
+                }
             });
-        }());
-        
-    </script>
+        };
+
+        window.addEventListener('load', function(){
+            initSwiper();
+        });
+    }());
+</script>
     <script>
         var rellax = new Rellax('.rellax');
     </script>

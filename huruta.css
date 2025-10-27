@@ -134,7 +134,7 @@
         }
 
         .swiper {
-            width: 600px;
+            width: 100vw;
             height: 300px;
         }
         
@@ -144,6 +144,8 @@
             margin-bottom: 10px;
             background-color: antiquewhite;
             height: 100%;
+            text-align: center;
+            line-height: 110px;
         }        
 
         #sewtec:hover{
@@ -173,6 +175,12 @@
         .content h2 {
             line-height: 110px;
             font-size: 2rem;
+        }
+
+        .content_swiper{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         footer {
