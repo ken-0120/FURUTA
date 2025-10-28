@@ -81,37 +81,34 @@
                 <div class="content_swiper" id="textposi" data-rellax-speed="-4">
                     <article class="scroll_up" id="sewtec">
                         <h2>刺繍技法</h2>
-                        <p>30台以上のミシンを用いて<br>様々な種類のステッチを縫いあげる</p>
-                    </article>
-
-                    <div class="swiper">
+                        <p>30台以上のミシンを用いて<br>様々な種類のステッチを縫いあげる</p><div class="swiper">
                         <div class="swiper-wrapper">
-                            <a href="#" class="swiper-slide">
+                            <a href="#" class="swiper-slide card">
                                 <div class="tag">
                                     アンパンマン
                                 </div> 
                             </a>
-                            <a href="#" class="swiper-slide">
+                            <a href="#" class="swiper-slide card">
                                 <div class="tag">
                                     食パンマン
                                 </div>
                             </a>
-                            <a href="#" class="swiper-slide">
+                            <a href="#" class="swiper-slide card">
                                 <div class="tag">
                                     カレーパンマン
                                 </div>
                             </a>
-                            <a href="#" class="swiper-slide">
+                            <a href="#" class="swiper-slide card">
                                 <div class="tag">
                                     アンパンマン
                                 </div> 
                             </a>
-                            <a href="#" class="swiper-slide">
+                            <a href="#" class="swiper-slide card">
                                 <div class="tag">
                                     食パンマン
                                 </div>
                             </a>
-                            <a href="#" class="swiper-slide">
+                            <a href="#" class="swiper-slide card">
                                 <div class="tag">
                                     カレーパンマン
                                 </div>
@@ -122,6 +119,9 @@
                         <!-- ナビゲーションボタン -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
+                    </article>
+
+                    
                     </div>
 
                 </div>
@@ -153,7 +153,7 @@
         const initSwiper = () => {
             const mySwiper = new Swiper('.swiper', {
                 slidesPerView: 4,
-                spaceBetween: 16,
+                spaceBetween: 0,
                 loop: true,
                 loopedSlides: slideLength,
                 speed: 5000, // より滑らかに
@@ -161,13 +161,6 @@
                     delay: 0,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: false,
-                },
-                allowTouchMove: true,
-                grabCursor: true,
-                breakpoints: {
-                    1025: {
-                        spaceBetween: 32,
-                    }
                 },
                 // トランジションを線形に
                 on: {
