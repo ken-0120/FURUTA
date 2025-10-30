@@ -87,14 +87,15 @@
                                 <div class="card_img" id="pants">
                                     アンパンマン
                                 </div>
-                                <div class="card_content">
-                                    aaa
-                                </div> 
+                                
                             </a>
                             <a href="#" class="swiper-slide card">
                                 <div class="card_img" id="hat">
                                     食パンマン
                                 </div>
+                                <div class="card_content">
+                                    aaa
+                                </div> 
                             </a>
                             <a href="#" class="swiper-slide card">
                                 <div class="card_img" id="cloth_1">
@@ -123,12 +124,8 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </article>
-
-                    
                     </div>
-
                 </div>
-            
         </section>
 
         <section class="contact" id="contact">
@@ -155,8 +152,8 @@
 
         const initSwiper = () => {
             const mySwiper = new Swiper('.swiper', {
-                slidesPerView: 4,
-                spaceBetween: 0,
+                slidesPerView: 5,
+                spaceBetween: 16,
                 loop: true,
                 loopedSlides: slideLength,
                 speed: 5000, // より滑らかに
