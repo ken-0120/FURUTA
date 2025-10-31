@@ -187,7 +187,8 @@
         }
 
         .content {
-            width: 50%;
+            height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -368,7 +369,7 @@
             opacity: 0;
         }
         .scroll_circlar.on {
-            transform: translateX(-500px);
+            transform: translateX(-20vw);
             opacity: 1;
         }
 
@@ -392,14 +393,17 @@
         .svg_container{
             position: relative;
             height: 100%;
-            width: 50%;
+            width: 100%;
         }
 
         svg{
             position: absolute;
-            max-width: 100%;
-            height: auto;
-            left: 0vh;
+        }
+
+        #craftsman{
+            height: 20%;
+            width: 90%;
+            object-fit: cover;
         }
 
         
