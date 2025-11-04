@@ -52,26 +52,14 @@
         <section class="jigyo" id="jigyo">
             <div class="bg">
                 <div style="display: flex; flex-direction: row; width: 100%; height: 100%;">
-                    <div style="display: flex; flex: 0.500;">
-                        <div class="svg_container">
-                            <svg class="scroll_circlar" xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
-                                <title>Circular Text Path</title>
-                                <defs>
-                                    <path id="textcircle" d="M250,400a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
-                                </defs>
-                                <g class="textcircle" >
-                                    <text textLength="940">
-                                        <textPath xlink:href="#textcircle" aria-label="CSS & SVG are awesome" textLength="940">
-                                            FURUTA * SPECIAL * SEWING | FURUTA * SPECIAL * SEWING |&#160;
-                                        </textPath>
-                                    </text>
-                                </g>
-                            </svg>
+                    <div style="display: flex; flex: 0.500;justify-content: center; align-items: center;">
+                        <div class="img-wrap">
+                            <img src="img/craftsmans_eye.jpg" id="craftsman">
                         </div>
                     </div>
                     <div style="display: flex; flex: 0.500;">
                         <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-                            <div style="display: flex; flex: 0.500;">
+                            <div style="display: flex; flex: 0.500; height: 50%;">
                                 <article class="content">
                                     <h2 class="scroll_up">The Craftsman's Eye</h2>
                                     <p>
@@ -81,8 +69,22 @@
                                     </p>
                                 </article>
                             </div>
-                            <div style="display: flex; flex: 0.500;">
-                                <img src="img/craftsmans_eye.jpg" id="craftsman">
+                            <div style="display: flex; flex: 0.500; height: 50%; align-items: center;">
+                                <div class="svg_container">
+                                    <svg class="scroll_circlar" xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                                        <title>Circular Text Path</title>
+                                        <defs>
+                                            <path id="textcircle" d="M250,400a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
+                                        </defs>
+                                        <g class="textcircle" >
+                                            <text textLength="940">
+                                                <textPath xlink:href="#textcircle" aria-label="CSS & SVG are awesome" textLength="940">
+                                                    FURUTA * SPECIAL * SEWING | FURUTA * SPECIAL * SEWING |&#160;
+                                                </textPath>
+                                            </text>
+                                        </g>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -165,39 +167,40 @@
     <script src="js/hambarger.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.js"></script>
-<script>
-    (function() {
-        const slideLength = document.querySelectorAll('.swiper-slide').length;
+    <script>
+        (function() {
+            const slideLength = document.querySelectorAll('.swiper-slide').length;
 
-        const initSwiper = () => {
-            const mySwiper = new Swiper('.swiper', {
-                slidesPerView: 5,
-                spaceBetween: 16,
-                loop: true,
-                loopedSlides: slideLength,
-                speed: 5000, // より滑らかに
-                autoplay: {
-                    delay: 0,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: false,
-                },
-                // トランジションを線形に
-                on: {
-                    init: function() {
-                        this.wrapperEl.style.transitionTimingFunction = 'linear';
+            const initSwiper = () => {
+                const mySwiper = new Swiper('.swiper', {
+                    slidesPerView: 5,
+                    spaceBetween: 16,
+                    loop: true,
+                    loopedSlides: slideLength,
+                    speed: 5000, // より滑らかに
+                    autoplay: {
+                        delay: 0,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: false,
                     },
-                    slideChange: function() {
-                        this.wrapperEl.style.transitionTimingFunction = 'linear';
+                    // トランジションを線形に
+                    on: {
+                        init: function() {
+                            this.wrapperEl.style.transitionTimingFunction = 'linear';
+                        },
+                        slideChange: function() {
+                            this.wrapperEl.style.transitionTimingFunction = 'linear';
+                        }
                     }
-                }
-            });
-        };
+                });
+            };
 
-        window.addEventListener('load', function(){
-            initSwiper();
-        });
-    }());
-</script>
+            window.addEventListener('load', function(){
+                initSwiper();
+            });
+        }());
+    </script>
+    <script src="js/curtain.js"></script>
     <script>
         var rellax = new Rellax('.rellax');
     </script>
