@@ -198,8 +198,12 @@
         }
 
         .content h2 {
-            line-height: 110px;
-            font-size: 2rem;
+            line-height: 20vh;
+            font-size: 6rem;
+        }
+
+        .content span{
+            line-height: 40px;
         }
 
         .content_swiper{
@@ -399,7 +403,8 @@
         svg{
             position: absolute;
             height: 80vh;
-            bottom: 0px;
+            bottom: -15vh;
+            z-index: 10;
         }
 
         #craftsman{
@@ -408,27 +413,48 @@
             object-fit: cover;
         }
 
-        .img-wrap {
-            height: 100%;
+        .photo{
             width: 100%;
-            overflow: hidden;
-            position: relative;
-        }       
-
-        .img-wrap::before {
-            animation: img-wrap 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            content: '';
-            inset: 0;
-            pointer-events: none;
-            position: absolute;
-            z-index: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-inner{
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @keyframes img-wrap {
-            100% {
+        .animation{
+            position: relative;
+            overflow: hidden;
+        }
+        .animation::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top:0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: #36454F;
+        }
+
+        @keyframes showMask{
+            0%{
+                transform: translate(0%);
+            }
+            100%{
                 transform: translateX(100%);
             }
-        } 
+        }
+
+        .animation.show::before{
+            animation: showMask 3s forwards;
+        }
         
         .shapedividers_com-6735{
             overflow:hidden;
