@@ -82,6 +82,10 @@
             color: rgb(226, 226, 246);
         }
 
+        #eye_title{
+
+        }
+
         nav a {
             color: aliceblue;
             text-decoration: none;
@@ -444,16 +448,13 @@
         }
 
         @keyframes showMask{
-            0%{
-                transform: translate(0%);
-            }
             100%{
                 transform: translateX(100%);
             }
         }
 
         .animation.show::before{
-            animation: showMask 3s forwards;
+            animation: showMask 2s ease-out forwards;
         }
         
         .shapedividers_com-6735{
