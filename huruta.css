@@ -83,24 +83,20 @@
         }
 
         #eye-title{
-            font-size: 2vw;
-        }
-
-        nav a {
-            color: aliceblue;
-            text-decoration: none;
-            font-family: "Cactus Classical Serif", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        nav ul {
-            font-size: 20px;
-        }
-
-        nav ul li {
-            list-style: none;
-            margin: 20px 30px;
+            h2{
+                font-weight: 600;
+                color: antiquewhite;
+                font-size: 40px;
+                margin-bottom: 5px;
+            }
+            hr{
+                border: none;
+                width: 120px;
+                height: 5px;
+                background-color:antiquewhite;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
         }
 
         .bg {
@@ -196,7 +192,6 @@
 
         .content {
             h2 {
-                line-height: 20vh;
                 font-size: 6rem;
             }
         }
@@ -218,118 +213,6 @@
             align-items: center;
             justify-content: center;
             color: white;
-        }
-
-        .hamback {
-            position: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(30px);
-            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
-            border:2px solid rgba(255,255,255,0.18);
-            border-radius: 50%;
-            width: 80px;
-            aspect-ratio: 1;
-            top: 20px;
-            right: 30px;
-            z-index: 51;
-            transition: 0.2s ease;
-            cursor: pointer;
-        }
-
-        .hamback:hover {
-            backdrop-filter: blur(90px);
-            .hamburger span{
-                background-color: #9f9f9f;
-            }
-        }
-
-        .hamburger {
-            width: 30px;
-            height: 25px;
-            position: relative;
-            transition: 0.4s;
-        }
-
-        .hamburger span {
-            display: block;
-            height:3px;
-            background: #e2e2ee;
-            border-radius: 2px;
-            margin: 5px 0;
-            transition: 0.4s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -5px);
-        }
-
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            right: -250px;
-            width: 250px;
-            height: 100vh;
-            background-color: #393E46;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-            transition: right 0.4s ease, opacity 0.4s ease;
-            z-index: 50;
-            padding: 120px 20px 20px;
-            opacity: 0;
-        }
-
-        .nav-menu.active {
-            right: 0;
-            opacity: 1;
-        }
-
-        .nav-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-menu li {
-            padding: 15px 0 15px 0;
-            margin: 15px 0 15px 0;
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.4s ease;
-        }
-
-        .nav-menu.active li {
-            opacity: 1;
-            transform: translateX(0);
-            transition-delay: 0.1s;
-        }
-
-        .nav-menu li:hover a{
-            font-size: 25px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #F5F5DC;
-            font-size: 22px;
-            transition: 0.1s ease;
-        }
-
-        .divide-line {
-            height: 1px;
-            width: 90%;
-            text-align: center;
-            background-color: aliceblue;
-            opacity: 0.2;
-            margin: 10px auto;
         }
 
         .scroll_up {
@@ -579,6 +462,7 @@
             transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
             transform-origin: 250px 250px;
         }
+
         
         svg:hover .textcircle {
             transform: scale(1.2) rotate(90deg);
@@ -626,15 +510,14 @@
                 display: none; /* スマホでSVGは邪魔 */
             }
 
+            .photo{
+                display: none;
+            }
+
             #sewtec {
                 width: 90vw;
                 height: auto;
                 padding: 30px 20px;
-            }
-
-            .hamback {
-                width: 60px;
-                right: 15px;
             }
 
             .contact-inputs{
