@@ -89,14 +89,15 @@
                 font-size: 40px;
                 margin-bottom: 5px;
             }
-            hr{
+        }
+
+        hr{
                 border: none;
                 width: 120px;
                 height: 5px;
                 background-color:antiquewhite;
                 border-radius: 10px;
                 margin-bottom: 20px;
-            }
         }
 
         .bg {
@@ -180,12 +181,7 @@
         }
 
         .content {
-            height: 100%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
             overflow-wrap: break-word;
             color: antiquewhite;
         }
@@ -207,7 +203,7 @@
         }
 
         footer {
-            height: 20vh;
+            height: 10vh;
             background-color: rgba(51, 51, 51);
             display: flex;
             align-items: center;
@@ -251,11 +247,22 @@
 
         .scroll_circlar{
             transition: 0.5s ease-in-out;
-            transform: translateX(600px);
+            transform: translateX(100px);
             opacity: 0;
         }
         .scroll_circlar.on {
-            transform: translateX(20vw);
+            transform: translateX(0vw);
+            opacity: 1;
+        }
+
+        .scroll_line{
+            transition: 0.5s ease-in-out;
+            width: 0px;
+            opacity: 0;
+        }
+
+        .scroll_line.on {
+            width: 100px;
             opacity: 1;
         }
 
