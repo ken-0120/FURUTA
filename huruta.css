@@ -121,16 +121,10 @@
             width: 100vw;
             text-align: center;
             justify-content: center;
+            overflow: visible;
         }
 
-        .swiper {
-            width: 100%;
-            height: 500px;
-        }
 
-        .swiper-wrapper {
-            margin-top: 10vh;
-        }
         
         .card_img{
             position: relative;
@@ -174,14 +168,18 @@
             box-shadow: #36454F 0px 10px 15px -3px, #36454F 0px 4px 6px -2px;
         }
 
-        #textposi{
-            position: relative;
-            display: inline-block;
+        #sew #textposi{
             padding-top: 8rem;
             padding-bottom: 8rem;
-            margin: 0,auto;
-            padding: 0, 10rem;
+        }
+
+        #textposi{
+            position: relative;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
             max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10rem;
         }
 
         .content {
