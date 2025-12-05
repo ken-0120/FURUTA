@@ -94,17 +94,6 @@ ol {
   list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1.6rem;
-  margin: 0;
-  padding: 0;
-}
-
 main {
   display: block;
 }
@@ -138,68 +127,7 @@ main {
 }
 /* design
 ------------------------------*/
-.c-temp {
-  line-height: 1;
-}
-.c-temp .l-inner {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-@media only screen and (max-width: 1024px) {
-  .c-temp .l-inner {
-    padding: 3.2rem;
-  }
-}
-.c-temp .text {
-  font-size: 2.4rem;
-  font-weight: bold;
-}
-.c-temp .button {
-  font-size: 1.4rem;
-  font-weight: bold;
-  display: block;
-  width: 12rem;
-  padding: 1.6rem 0 1.2rem;
-  text-align: center;
-  letter-spacing: 0.1em;
-  color: #fff;
-  border-radius: 100px;
-  background-color: var(--color-theme);
-}
-@media only screen and (max-width: 599px) {
-  .c-temp .button {
-    font-size: 1.2rem;
-    width: 9rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  .c-temp .button {
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-  }
-  .c-temp .button:hover {
-    background-color: var(--color-theme-darken);
-  }
-}
 
-.c-footer .l-inner {
-  padding-top: 0;
-}
-.c-footer .text {
-  color: var(--color-gray);
-}
 
 .c-info {
   font-size: 1.4rem;
@@ -373,7 +301,7 @@ header {
   left: 100px;
   z-index: 1001;
   a {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #e2e2ee;
     text-decoration: none;
     font-family: "Cactus Classical Serif", serif;
@@ -391,7 +319,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   opacity: 0.8;
   animation: bounce 2s infinite;
 }
@@ -443,35 +371,6 @@ hr {
   display: flex;
 }
 
-.sewtec {
-  position: relative;
-  background-color: #f4f5f7;
-  background-size: cover;
-  background-position: center;
-}
-
-#sewtec {
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  width: 100vw;
-  text-align: center;
-  justify-content: center;
-}
-
-#sew #textposi {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
-#textposi {
-  position: relative;
-  display: inline-block;
-
-  margin: 0, auto;
-  padding: 0, 10rem;
-  max-width: 1200px;
-}
 
 .content {
   width: 100%;
