@@ -35,6 +35,29 @@ html {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+.pagelorder{
+  position: abusolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #36454f;
+  z-index: 10000;
+  animation: lordpage 3s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes lordpage {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   html {
     -webkit-text-size-adjust: 100%;
@@ -301,7 +324,6 @@ header {
   left: 100px;
   z-index: 1001;
   a {
-    font-size: 3rem;
     color: #e2e2ee;
     text-decoration: none;
     font-family: "Cactus Classical Serif", serif;
