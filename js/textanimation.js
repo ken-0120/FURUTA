@@ -1,10 +1,11 @@
-const CLASSNAME = "-visible";
-const TIMEOUT = 1500;
-const $target = $(".title");
 
-setInterval(() => {
-    $target.addClass(CLASSNAME);
-    setTimeout(() => {
-        $target.removeClass(CLASSNAME);
-    }, TIMEOUT);
-}, TIMEOUT * 2);
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+    const parent = document.querySelector(".pagelorder");
+
+  // 親のアニメーションが終わったらスクロール解除
+    parent.addEventListener("animationend", () => {
+        document.body.style.overflow = "auto";
+    });
+});

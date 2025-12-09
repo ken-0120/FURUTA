@@ -42,7 +42,8 @@ html {
   width: 100vw;
   background-color: #ffffff;
   z-index: 10000;
-  
+  animation: lordpage 2s ease forwards;
+  animation-delay: 4s;
 }
 
 .loader-inner{
@@ -50,6 +51,24 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: loadtext 4s ease forwards;
+}
+
+@keyframes loadtext {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  70% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes lordpage {
@@ -73,6 +92,36 @@ html {
   html {
     font-size: 50%;
   }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 全ての title に基本アニメーション --- */
+.content-area .title {
+  opacity: 0;
+  animation: fadeUp 0.4s ease-out forwards;
+}
+
+/* --- 順番ごとに遅延させる --- */
+.content-area .title:nth-child(1) {
+  animation-delay: 6s;
+}
+
+.content-area .title:nth-child(2) {
+  animation-delay: 6.1s;
+}
+
+.content-area .title:nth-child(3) {
+  animation-delay: 6.2s;
 }
 
 body {
@@ -373,62 +422,7 @@ header {
   font-size: 6vw;
   color: rgb(226, 226, 246);
 }
-.title {
-  display: flex;
 
-  color: #aa8f7b;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-.title span {
-  display: block;
-  transform: translate(0, 105%);
-  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
-}
-
-.title.-visible span {
-  transform: translate(0, 0);
-}
-
-.title span:nth-child(2) {
-  transition-delay: 0.06s;
-}
-.title span:nth-child(3) {
-  transition-delay: 0.12s;
-}
-.title span:nth-child(4) {
-  transition-delay: 0.18s;
-}
-.title span:nth-child(5) {
-  transition-delay: 0.24s;
-}
-.title span:nth-child(6) {
-  transition-delay: 0.30s;
-}
-.title span:nth-child(7) {
-  transition-delay: 0.36s;
-}
-.title span:nth-child(8) {
-  transition-delay: 0.42s;
-}
-.title span:nth-child(9) {
-  transition-delay: 0.48s;
-}
-.title span:nth-child(10) {
-  transition-delay: 0.54s;
-}
-.title span:nth-child(11) {
-  transition-delay: 0.6s;
-}
-.title span:nth-child(12) {
-  transition-delay: 0.66s;
-}
-.title span:nth-child(13) {
-  transition-delay: 0.72s;
-}
-.title span:nth-child(14) {
-  transition-delay: 0.78s;
-}
 
 #eye-title {
   h2 {
