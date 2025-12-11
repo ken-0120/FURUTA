@@ -1,3 +1,5 @@
+console.log('start server.js');
+
 const express = require("express");
 const app = express();
 
