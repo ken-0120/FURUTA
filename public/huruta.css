@@ -32,17 +32,17 @@ html {
   word-break: break-word;
   color: #333;
   background-color: var(--color-base);
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.pagelorder{
+.pageloader{
   position: abusolute;
   height: 100vh;
   width: 100vw;
   background-color: #f8f8f8;
   z-index: 10000;
-  animation: lordpage 2s ease forwards;
+  animation: loadpage 2s ease forwards;
   animation-delay: 4s;
 }
 
@@ -71,7 +71,7 @@ html {
   }
 }
 
-@keyframes lordpage {
+@keyframes loadpage {
   0% {
     opacity: 1;
     visibility: visible;
@@ -191,8 +191,8 @@ main {
 }
 
 .l-section .l-inner {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
 }
 
 @media only screen and (max-width: 599px) {
@@ -531,6 +531,10 @@ footer {
   opacity: 1;
 }
 
+.timing01{
+  transition-delay: 0.1s;
+}
+
 .timing02 {
   transition-delay: 0.2s;
 }
@@ -667,7 +671,7 @@ svg {
   }
   hr {
     border: none;
-    width: 120px;
+    width: 0px;
     height: 5px;
     background-color: antiquewhite;
     border-radius: 10px;
@@ -899,7 +903,7 @@ svg:hover .textcircle {
   line-height: 1.6;
   display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   height: 3.2em;
   margin-top: 1.6rem;
