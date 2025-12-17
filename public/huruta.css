@@ -111,6 +111,7 @@ html {
   animation: fadeUp 0.4s ease-out forwards;
 }
 
+
 /* --- 順番ごとに遅延させる --- */
 .content-area .title:nth-child(1) {
   animation-delay: 6s;
@@ -122,6 +123,11 @@ html {
 
 .content-area .title:nth-child(3) {
   animation-delay: 6.2s;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
 }
 
 body {
@@ -410,6 +416,14 @@ header {
   div:hover {
     letter-spacing: 0.05em; /* 字間の設定 */
   }
+}
+
+.sub-content{
+  position: absolute;
+  bottom: 20vh;
+  right: 5vw;
+  z-index: 1;
+  color: rgb(226, 226, 246);
 }
 
 .title {
@@ -908,6 +922,7 @@ svg:hover .textcircle {
   height: 3.2em;
   margin-top: 1.6rem;
 }
+
 @media only screen and (min-width: 1025px) {
   .card05 .swiper:hover .slide:not(:hover) {
     opacity: 0.3;
