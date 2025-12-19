@@ -81,9 +81,17 @@ header{
 
 .title{
     text-align: center;
-    font-size: 4rem;
+    font-size: 6rem;
     margin-top: 8%;
     color: #333;
+    margin-top: 10vh;
+    text-align: left;
+}
+span{
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: #666;
 }
 
 .wrapper{
@@ -104,6 +112,7 @@ header{
 
 .grid-wrapper{
     width: 90%;
+    margin-bottom: 10vh;
 }
 
 .item{
@@ -127,4 +136,44 @@ footer{
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+.scroll_up {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateY(50px);
+    opacity: 0;
+  will-change: transform, opacity; /* ブラウザに事前通知 */
+}
+
+.scroll_up.on {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.timing01{
+    transition-delay: 0.1s;
+}
+.timing02 {
+    transition-delay: 0.2s;
+}
+.timing03 {
+    transition-delay: 0.3s;
+}
+.timing04 {
+    transition-delay: 0.4s;
+}
+.timing05 {
+    transition-delay: 0.5s;
+}
+.timing06 {
+    transition-delay: 0.6s;
+}
+.timing07 {
+    transition-delay: 0.7s;
+}
+.timing08 {
+    transition-delay: 0.8s;
+}
+.timing09 {
+    transition-delay: 0.9s;
 }

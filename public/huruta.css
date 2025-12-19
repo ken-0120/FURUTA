@@ -485,9 +485,17 @@ footer {
   height: 10vh;
   background-color: rgba(51, 51, 51);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: white;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  color: white;
+  margin-right: auto;
+  margin-left: 2rem;
+  text-decoration: none;
 }
 
 .scroll_up {
@@ -576,14 +584,14 @@ text {
 
 .svg_container {
   position: relative;
-  height: 100%;
-  width: 80%;
+  left: 0;
+  height: 20%;
+  width: 20%;
 }
 
 svg {
   position: absolute;
-  height: 80vh;
-  bottom: -15vh;
+  height: 30vh;
   z-index: 10;
 }
 
