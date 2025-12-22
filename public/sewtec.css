@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Sawarabi+Gothic&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 :root {
     --easing: cubic-bezier(.2, 1, .2, 1);
     --transition: .8s var(--easing);
@@ -13,8 +14,7 @@
 html{
     scrollbar-width: none;
     font-size: 62.5%;
-    font-family: "Spartan", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
-    "メイリオ", Meiryo, sans-serif;
+    font-family: "Ubuntu", sans-serif;
     line-height: 1.8;
     height: 100%;
     word-break: break-word;
@@ -29,7 +29,7 @@ html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
 
 header{
@@ -51,7 +51,7 @@ header{
         font-size: 3rem;
         color: #e2e2ee;
         text-decoration: none;
-        font-family: "Cactus Classical Serif", serif;
+        font-family: "Ubuntu", sans-serif;
         font-weight: 600;
         transition: letter-spacing 0.3s;
     }
