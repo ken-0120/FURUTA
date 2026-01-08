@@ -747,9 +747,9 @@ svg {
   cursor: pointer;
 }
 
-.content-right {
+.contact-right {
   img {
-    height: 80%;
+    height: 80vh;
   }
 }
 
@@ -992,6 +992,9 @@ svg:hover .textcircle {
 
   .content h2 {
     font-size: 5.5rem;
+  }
+  .contact-right img {
+    height: 80%;
   }
 }
 
