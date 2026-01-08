@@ -950,3 +950,139 @@ svg:hover .textcircle {
     opacity: 0.3;
   }
 }
+
+/* ========================================
+  Large Desktop (1920px以上)
+   ======================================== */
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 70%; /* 大画面では少し文字を大きく */
+  }
+
+  .l-inner {
+    max-width: 1400px;
+    padding: 0 12rem;
+  }
+
+  .title {
+    font-size: 5vw;
+  }
+
+  .content h2 {
+    font-size: 7rem;
+  }
+
+  .contact-inputs {
+    width: 500px;
+    height: 60px;
+  }
+}
+
+/* ========================================
+  Desktop (1025px - 1440px)
+   ======================================== */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .l-inner {
+    padding: 0 8rem;
+  }
+
+  .title {
+    font-size: 5.5vw;
+  }
+
+  .content h2 {
+    font-size: 5.5rem;
+  }
+}
+
+/* ========================================
+  Tablet Landscape (769px - 1024px)
+   ======================================== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 58%;
+  }
+
+  .logo {
+    left: 40px;
+  }
+
+  .logo a {
+    font-size: 2.2rem;
+  }
+
+  .title {
+    font-size: 4.5vw;
+  }
+
+  .content-area {
+    top: 8vh;
+    left: 4vw;
+  }
+
+  .sub-content1,
+  .sub-content2 {
+    font-size: 1.4rem;
+    bottom: 3vw;
+  }
+
+  .sub-content1 {
+    right: 3vw;
+  }
+
+  .sub-content2 {
+    left: 3vw;
+  }
+
+  /* About Usセクション */
+  .bg {
+    height: auto;
+    min-height: 70vh;
+  }
+
+  .content h2 {
+    font-size: 4.5rem;
+  }
+
+  .content span {
+    line-height: 32px;
+    font-size: 1.5rem;
+  }
+
+  #craftsman {
+    height: 85%;
+    width: 70%;
+  }
+
+  .svg_container {
+    height: 18%;
+    width: 18%;
+  }
+
+  svg {
+    height: 25vh;
+  }
+
+  /* Contact セクション */
+  .contact-inputs {
+    width: 350px;
+    height: 48px;
+  }
+
+  .contact-inputs textarea {
+    height: 120px;
+  }
+
+  .contact-right img {
+    height: 70%;
+  }
+
+  /* Swiper */
+  .card05 .slide {
+    width: 32rem;
+  }
+
+  .card05 .slide-content {
+    padding: 2.8rem;
+  }
+}
