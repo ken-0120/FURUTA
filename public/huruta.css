@@ -708,9 +708,9 @@ svg {
 
 .contact-left-title {
   h2{
+    font-size: 6rem;
     font-weight: 600;
     color: antiquewhite;
-    font-size: 2rem;
     margin-bottom: 5px;
   }
   hr {
