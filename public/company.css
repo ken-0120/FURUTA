@@ -78,6 +78,44 @@ header{
         visibility: hidden;
     }
 }
+
+.title{
+    text-align: center;
+    font-size: 6rem;
+    margin-top: 8%;
+    color: #333;
+    margin-top: 10vh;
+    text-align: left;
+}
+
+.wrapper{
+    position: relative;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10rem;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    gap: 20px;
+}
+tr{
+    gap: 20px;
+}
+
+th{   
+    width: 200px;
+}
+
+td{
+    width: 50vw;
+    overflow:hidden;
+}
+
 footer {
   height: auto; 
   color: white;
@@ -121,7 +159,7 @@ footer {
   width: 100%;
   height: 1px;
   background-color: white;
-  margin: auto;
+  margin:  2rem 0 0;
   margin-bottom: 1rem;
   opacity: 0.5;
 }
